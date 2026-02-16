@@ -1,0 +1,357 @@
+---
+# Supported options: 
+#   sn-nature:       Style for submissions to Nature Portfolio journals
+#   sn-basic:        Basic Springer Nature Reference Style/Chemistry Reference Style
+#   sn-mathphys:     Math and Physical Sciences Reference Style
+#   sn-aps:          American Physical Society (APS) Reference Style
+#   sn-vancouver:    Vancouver Reference Style
+#   sn-apa:          APA Reference Style 
+#   sn-chicago:      Chicago-based Humanities Reference Style
+#   default:         Default
+
+classoptions: 
+  - sn-basic      
+  # - Numbered      # Optional: Use numbered references instead of namedate references (only for sn-nature, sn-basic, sn-vancouver, sn-chicago, sn-mathphys or sn-nature)
+  # - referee       # Optional: Use double line spacing 
+  # - lineno        # Optional: Add line numbers
+  # - iicol         # Optional: Double column layour
+
+title: Structure-Preserving Data Augmentation for Small Datasets: Integrating Catalytic Priors with Residual Resampling
+Structure-Preserving Data Augmentation for Small-scale Data with Complex Logical Dependencies
+titlerunning: Article Title runing
+
+authors: 
+  - prefix: 
+    firstname: Ae Kyong
+    particle: 
+    lastname: Jung
+    suffix:
+    naturename: 
+    degrees: 
+    email: aekyong-jung@uiowa.edu
+    affiliation: [1]
+    corresponding: TRUE
+    equalcont: These authors contributed equally to this work.
+    
+  - firstname: Second
+    lastname: Author
+    affiliation: 2
+    equalcont: These authors contributed equally to this work.
+
+
+affiliations:
+  - number: 1
+    corresponding: TRUE
+    info:
+      orgdiv: Department
+      orgname: Organization
+    address:
+        street: Street
+        city: City
+        postcode: 100190
+        state: State
+        country: Country
+  - number: 2
+    corresponding: TRUE
+    info:
+      orgname: Other Organisation
+    
+  
+keywords:
+  - data augmentation
+  - SmoteR
+  - Catalytic Prior
+  
+pacs: 
+  jel:
+    - "D8"
+    - "H51"
+  msc:
+    - "35A01"
+    - "65L10"
+
+
+# Sample for structured abstract
+abstract: |
+  **Purpose**: The abstract serves both as a general introduction to the topic and as a brief, non-technical summary of the main results and their implications. The abstract must not include subheadings (unless expressly permitted in the journal's Instructions to Authors), equations or citations. As a guide the abstract should not exceed 200 words. Most journals do not set a hard limit however authors are advised to check the author instructions for the journal they are submitting to.
+
+bibliography: bibliography.bib
+
+header-includes: |
+  %% Per the spinger doc, new theorem styles can be included using built in style, 
+  %% but it seems the don't work so commented below
+  %\theoremstyle{thmstyleone}%
+  \usepackage{booktabs}
+  \newtheorem{theorem}{Theorem}%  meant for continuous numbers
+  %%\newtheorem{theorem}{Theorem}[section]% meant for sectionwise numbers
+  %% optional argument [theorem] produces theorem numbering sequence instead of independent numbers for Proposition
+  \newtheorem{proposition}[theorem]{Proposition}%
+  %%\newtheorem{proposition}{Proposition}% to get separate numbers for theorem and proposition etc.
+
+  %% \theoremstyle{thmstyletwo}%
+  \theoremstyle{remark}
+  \newtheorem{example}{Example}%
+  \newtheorem{remark}{Remark}%
+
+  %% \theoremstyle{thmstylethree}%
+  \theoremstyle{definition}
+  \newtheorem{definition}{Definition}%
+
+output: rticles::springer_article
+---
+
+```{r setup, include=FALSE}
+
+knitr::opts_chunk$set(echo = FALSE,
+                      message = FALSE,
+                      warning = FALSE,
+                      fig.align = "center",
+                      fig.pos = 'H'
+                      )
+library(kableExtra)
+library(tidyverse)
+```
+
+
+```{r plot_data_distribution, include=TRUE}
+itemData = readxl::read_excel("../../data/math_g3_feature.xlsx", skip =1, col_names =TRUE, sheet = "Coding")
+
+# save original variable names
+originalVarName = names(itemData)
+
+# rename the variables
+varNames.info = c("grade","testType", "itemNum", "itemID","standard",
+             "pctCTT","b.bf","a.bf","pctIRT","b.af","a.af", "pctSEM")
+varNames.predictors = c(paste0("v", 1:(ncol(itemData)-length(varNames.info))))
+
+colnames(itemData) = c(varNames.info, varNames.predictors)
+
+
+# select data of predictor variables
+predictors = itemData[,varNames.predictors]
+
+# remove all 1 or 0 variable
+# predictors = predictors[,which(apply(predictors, 2, sum)!= nrow(predictors))] # remove v1, v23
+# predictors = predictors[,which(apply(predictors, 2, sum)!= 0)]
+
+# combine information  and predictor data
+itemDataF = as.data.frame(cbind(itemData[,varNames.info], predictors))
+
+# save final predictor variable names
+predictor_vars = names(predictors)
+
+print(hist(itemDataF$pctCTT))
+print(hist(itemDataF$pctIRT))
+```
+
+# Introduction {#sec1}
+Introduction (Methodology-focused)Machine learning models for tabular data often suffer from performance instability when the sample size is significantly smaller than the feature dimensionality ($N \approx P$). In such "Small Data" scenarios, traditional data augmentation methods like SMOTE often fail because they treat features as independent points in a geometric space, ignoring the underlying logical constraints and categorical dependencies inherent in real-world domains.This study addresses the challenge of predicting target values in a high-dimensional, small-scale dataset where features represent discrete structural components—such as mathematical operations or geometric concepts in educational assessment. In this context, a synthetic observation is only valid if it maintains the structural integrity of the original feature combinations. To solve this, we propose augCAT, a data augmentation framework that utilizes Catalytic Priors and Stratified Residual Resampling.Unlike existing resampling techniques in the UBL (Utility-Based Learning) package, which often prioritize balancing the target distribution at the cost of feature logic, augCAT preserves the "covariate backbone" of the data. By applying a controlled swap-rate to replicate existing feature structures and re-injecting empirical residuals based on predicted quantiles, our method simulates the inherent uncertainty of the data without distorting its logical essence.To prove the robustness of the proposed method, we conduct a comparative analysis using Lasso, Cubist, and XGBoost models within a 10-iteration Monte Carlo Cross-Validation framework. Our results demonstrate that preserving structural dependencies during augmentation leads to more consistent and reliable predictions than conventional interpolation or imputation methods, especially when the test-to-train ratio is sensitive due to data scarcity.
+
+
+
+The objective of data augmentation is to improve the performance of learning model prediction on the rare cases. If there are majority class, the model learn the data focusing on the majority class, which lead to lower the performance of predicting on rare cases.
+
+The primary objective of data augmentation is to generate “good” synthetic data which are rare cases. In this context, “good” synthetic data effectively capture the underlying relationship between predictor and target variables within training set. The ultimate goal is to train a model that can accurately predict target variables from the predictor variable in an unseen test set. 
+To achieve this, we explored several data augmentation techniques designed to create well-connected predictor-target pairs. The methods investigated include random oversampling, Gaussian Noise, SMOTER, SMOTGN, Importance Sampling, Multiple Imputation, and the use of a catalytic prior. 
+
+
+# Methodology {#sec2}
+
+## Catalytic Prior {#subsec2-1}
+To improve model stability and prevent overfitting, a dataset can be augmented with synthetic data generated from a simpler, more robust model. This technique works by using the parameter estimates from the simpler model to create new, artificial data points. This can be done even if the parameter estimates themselves are not statistically significant.
+The purpose of this synthetic data is not to find the "true" underlying model, but rather to increase the effective sample size for the more complex model. By expanding the dataset, this process stabilizes the complex model and acts as a form of regularization, preventing overfitting by shrinking the complex model's parameters toward the simpler, often intercept-only, baseline.
+ 
+The primary difference between the DA-MI (Data Augmentation with Multiple Imputation) and Catalytic prior methods for generating synthetic data lies in the mechanism for creating values for independent variables. The Catalytic prior method generates values by drawing them randomly from the possible range of an independent variable. This approach is not constrained by the combinations observed in the original data, which can result in the creation of novel data patterns not present in the initial dataset. Consequently, this method is well-suited for exploring the potential data space and testing model robustness against new scenarios. In contrast, the DA-MI method is designed to generate synthetic values that are as similar as possible to the original data. Its fundamental purpose is to support the faithful replication of research; by creating a dataset that closely mirrors the original's characteristics and distributions, DA-MI facilitates analysis that yield results consistent with the original study without disclosing sensitive information. Therefore, the choice between these methods is contingent upon the research goal: the Catalytic prior is preferable for exploration and pattern discovery, whereas DA-MI is the appropriate choice for validation and replication. 
+
+
+## Random Oversampling {#subsec2-2}
+Replicate original data including target variable and predictors within the threshold.
+
+```{r plot_relevance_ctt, echo=FALSE, out.width = "80%",  fig.cap="Relevance function and threshold for CTT"}
+knitr::include_graphics("../../Plot_pctCTT_random.png")
+```
+```{r plot_relevance_irt, echo=FALSE, out.width = "80%",  fig.cap="Relevance function and threshold for IRT"}
+knitr::include_graphics("../../Plot_pctIRT_random.png")
+```
+
+## Gaussian Noise {#subsec2-3}
+Add an error sampled from Normal(0, perc) to a rare case. Perc is derived from the median of distances with the other rare cases from the rare value. It is applied to the predictors and target value.
+
+## SMOTE R {#subsec2-4}
+Conduct interpolation between one rare case and the other rare case. The other rare case is randomly selected within the k-nearest neighbors among the rare cases. Between the two rare cases, interpolation is applied. This is applied to predictor and target variable.
+
+## SMOGN {#subsec2-5}
+This is combination of Smote R and Gaussian Noise. When the other rare case is within the safe zone which is close than the median of the distances derived from all the distance from the seed rare case. If the other rare case is not within the safe zone, then it is neglected and Gaussian Noise method is applied. 
+
+## Importance Sampling {#subsec2-6}
+
+## Multiple Imputation (DA-MI)  {#subsec2-7}
+This three-step method creates a synthetic dataset that mimics the statistical properties of original, sensitive data. This allows researchers to replicate findings without compromising the privacy of individuals. 
+1. Generating pseudo-observations (w) by applying a masking model to the original data. This process intentionally adds statistical noise or otherwise perturbs the confidential values, effectively creating a masked version of the dataset that obscures the true, sensitive information. 
+2.Next, fit a joint imputation model by integrating two distinct parts: the masking model from the previous step and an association model. This association model is designed to capture the underlying statistical relationships that is derived from the analysis model applied with the variables in the original dataset. By combining these components, the joint model simultaneously learns both the data's true patterns and the specific nature of the noise that was introduced.
+3. Finally, generate the synthetic data by drawing new values from the Bayesian posterior predictive distribution of the fitted joint model.
+
+A key methodological distinction between the DA-MI framework and the Gaussian noise method is found in their respective approaches to synthesizing the dependent variable. The DA-MI approach generates these values from a formal statistical model, drawing new observations from the Bayesian posterior predictive distribution. Conversely, the Gaussian noise method employs a more direct perturbation technique; it creates synthetic values by adding random noise, sampled from a Gaussian distribution, directly to the original data points.
+
+
+
+# Experimental setup {#sec3}
+
+To remove the bias by splitting the small sample into train and test data sets, we conducted the 10-iteration Monte Carlo Cross Validation(MCCV) protocol. In each iteration, splitting the train and test data sets individually secures the stability of the results. 
+
+# {#subsec3-1}
+
+Ridge, Lasso, SVR, KNN, Logistic Regression, Neural networks are sensitive to the scale of features.
+Tree-based models like Random Forest, XGBoost separate data not based on the size, but the order or separation point. 
+
+
+## Ridge and Rasso 
+## SVR
+This model calculate the distance between the data points, which makes the model become sensitive to the scale of the features. 
+## Random Forest
+## XGBoost 
+## Cubist 
+
+Q. In catalytic prior, when generating y value, the value can over 100. Do we need to constrain them to 100?
+
+
+
+
+\newpage
+
+# Results {#sec4}
+This is result section.
+
+```{r table_frequency, echo=FALSE, message=FALSE, warnings=FALSE, fig.pos = "H"}
+freq = read.csv("../../3. Table_Frequency_Balanced Data.csv")
+freq  %>%
+  kbl(
+    caption = "Frequency table by data augmentation method",
+    digits = 3,
+    format = "latex",
+    booktabs = TRUE
+  )  %>%
+  kable_styling(latex_options = "hold_position")
+
+
+```
+
+
+
+
+```{r table_aug_performance, echo=FALSE, message=FALSE, warning=FALSE}
+summary_table <- read.csv("../../7. method_comparison_summary.csv")
+summary_table <- summary_table[, -1]
+colnames(summary_table)[1] <- "Method"
+
+summary_table %>%
+  kbl(
+    caption = "Evaluation metric by data augmentation method",
+    digits = 3,
+    format = "latex",    
+    booktabs = TRUE,     
+    col.names = c("Aug.", "Mean", "SD", "Mean", "SD", "Mean", "SD", "Mean", "SD")
+  ) %>%
+  add_header_above(c(" " = 1, "RMSE" = 2, "MAE" = 2, "R-squared" = 2, "MAPE" = 2))
+```
+
+\newpage
+
+```{r lasso_rmse, echo=FALSE, out.width = "80%",  fig.cap="RMSE across data augmentation methods for Lasso"}
+knitr::include_graphics("../../6. plot_Lasso_RMSE.png")
+```
+```{r lasso_mae, echo=FALSE, out.width = "80%",  fig.cap="MAE across data augmentation methods for Lasso"}
+knitr::include_graphics( "../../6. plot_Lasso_MAE.png")
+```
+```{r lasso_r2, echo=FALSE, out.width = "80%",  fig.cap="R-squared across data augmentation methods for Lasso"}
+knitr::include_graphics("../../6. plot_Lasso_R2.png")
+```
+
+
+\newpage
+
+```{r Ridge_rmse, echo=FALSE, out.width = "80%",  fig.cap="RMSE across data augmentation methods for Ridge"}
+knitr::include_graphics("../../6. plot_Ridge_RMSE.png")
+```
+```{r Ridge_mae, echo=FALSE, out.width = "80%",  fig.cap="MAE across data augmentation methods for Ridge"}
+knitr::include_graphics( "../../6. plot_Ridge_MAE.png")
+```
+```{r Ridge_r2, echo=FALSE, out.width = "80%",  fig.cap="R-squared across data augmentation methods for Ridge"}
+knitr::include_graphics("../../6. plot_Ridge_R2.png")
+```
+
+
+\newpage
+
+```{r Random_Forest_rmse, echo=FALSE, out.width = "80%",  fig.cap="RMSE across data augmentation methods for Random Forest"}
+knitr::include_graphics("../../6. plot_Random Forest_RMSE.png")
+```
+```{r Random_Forest_mae, echo=FALSE, out.width = "80%",  fig.cap="MAE across data augmentation methods for Random Forest"}
+knitr::include_graphics( "../../6. plot_Random Forest_MAE.png")
+```
+```{r Random_Forest_r2, echo=FALSE, out.width = "80%",  fig.cap="R-squared across data augmentation methods for Random Forest"}
+knitr::include_graphics("../../6. plot_Random Forest_R2.png")
+```
+
+
+\newpage
+
+```{r XGBoost_rmse, echo=FALSE, out.width = "80%",  fig.cap="RMSE across data augmentation methods for XGBoost"}
+knitr::include_graphics("../../6. plot_XGBoost_RMSE.png")
+```
+```{r XGBoost_mae, echo=FALSE, out.width = "80%",  fig.cap="MAE across data augmentation methods for XGBoost"}
+knitr::include_graphics( "../../6. plot_XGBoost_MAE.png")
+```
+```{r XGBoost_r2, echo=FALSE, out.width = "80%",  fig.cap="R-squared across data augmentation methods for XGBoost"}
+knitr::include_graphics("../../6. plot_XGBoost_R2.png")
+```
+
+
+\newpage
+
+```{r Cubist_rmse, echo=FALSE, out.width = "80%",  fig.cap="RMSE across data augmentation methods for Cubist"}
+knitr::include_graphics("../../6. plot_Cubist_RMSE.png")
+```
+```{r Cubist_mae, echo=FALSE, out.width = "80%",  fig.cap="MAE across data augmentation methods for Cubist"}
+knitr::include_graphics( "../../6. plot_Cubist_MAE.png")
+```
+```{r Cubist_r2, echo=FALSE, out.width = "80%",  fig.cap="R-squared across data augmentation methods for Cubist"}
+knitr::include_graphics("../../6. plot_Cubist_R2.png")
+```
+
+
+\newpage
+
+
+Overall learning model: GN, SR, SG performed well.
+Lasso, Ridge (Regularized linear regression model): GN, SG, IS, MI
+Random Forest, XGBoost, Cubist: GN, SG, CT
+
+Random Forest and XGBoost are tree-based method. , Cubist is mixture of tree-based and linear regression. 
+Random Forest build hundreds of decision trees independently of one another. 
+XGBoost builds trees sequentially. The first tree makes a prediction, and the second tree is then trained based on the errors (residuals) of the first tree. The third tree is trained based on the error of second tree. Therefore, new tree focused on the hardest-t-predict cases. This sequential error-correcting approach makes it estremely powerful and often results in higher accuracy than Random Forest. 
+
+Except RO and IS, all results of augmentation methods outperformed than the NA. SR was always the best across all conditions. 
+
+
+MAE also showed the similar pattern withh the RMSE except CTT and Random split showing the higher MAE for CT than NA.
+
+
+MAPE also showed the similar pattern with the MAE. 
+
+
+In R-squared, except RO and IS, all methods showed matter perforamnce than the NA, except CTT and Random split condition. 
+
+
+
+Next Step
+Various tuning: threshold, oversampling ratio, the number of synthetic data
+
+Add Measurement criteria focusing on rare cases: F1 score, RMSE_rare
+  
+F1 score: 2x(precision x recall)/(precision+recall)
+Precision: TP/(TP + FP)
+Recall: TP/(TP + FN)
+RMSE for rare cases based on threshold
+
+  

@@ -1,0 +1,30 @@
+#!/bin/bash
+
+#####Set Scheduler Configuration Directives#####
+
+#Name the job:
+#$ -N DAUG
+
+#Send e-mail at beginning/end/suspension of job
+#$ -m bes
+
+#E-mail address to send to
+#$ -M aekyong-jung@uiowa.edu
+
+#Start script in current working directory
+#$ -cwd
+
+#####End Set Scheduler Configuration Directives#####
+
+
+#####Resource Selection Directives#####
+
+#See the HPC wiki for complete resource information: https://wiki.uiowa.edu/display/hpcdocs/Argon+Cluster
+#Select the queue to run in
+#$ -q all.q
+
+#Request four cores
+#$ -pe smp 4
+
+#####End Resource Selection Directives#####
+apptainer -v exec /Users/aekjung/Templin-Stack-2025-01.sif Rscript drafts/runAnalysis.R $SGE_TASK_ID

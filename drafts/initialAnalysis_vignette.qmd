@@ -1,0 +1,142 @@
+---
+title: "Machine Learning with AMEC"
+format: html
+editor: visual
+---
+
+# 1. Feature Selection
+
+1.  Filter
+
+-   Univariate filter
+-   Recursvie filter
+-   Genetic algorithm: An initial set of candidate solution combines with the individual that has the best fitness values
+-   Simulated Annealing: makes small random changes to an initial candidate solution.
+
+2.  Wrapper
+3.  Embedded
+
+# 2. Data Splitting
+
+-   Simple splitting based on the outcome
+-   Splitting based on the predictors
+-   Data splitting for time series
+-   Simple splitting with important groups
+
+# 3. Model Trainnig and Tuning (Validation)
+
+# 5. Item Correct Rate of Sub-population
+
+$$P(Y) = \Sigma_{\theta}   P(Y=1|\theta)*P(\theta)$$
+
+## 5-1. Cut point and SEM
+
+$$ \theta_{sub} = (cutpoint - 1SEM, cutpoint + 1SEM) $$
+
+1.  Use only test type A and G excluding type B having 15 items.
+2.  Calculate item information
+3.  Test information = sum(item information)
+4.  CSEM\^2 = 1/Test information
+5.  Take the average of all squared CSEMs across test types.
+6.  Take the square root of the previous stage
+7.  Cut point = -1.4
+8.  Specify the range of theta for sub-population around the cut point
+
+## 5-2. Weight for sub-population
+
+$$ P(\theta_{sub})$$
+
+-   Find the pnorm of theta points using pnorm(mean = 0, sd = 1)
+-   Calculate weight using the summation of the all pnorm as denominator
+
+# 6. Predicting item difficulty with Explanatory IRT and Machine Learning
+
+## 6-1. Explanatory IRT Process (Bayesian/Maximum Liklihood)
+
+1.  Split the response data into train and test sets (person x item)
+2.  Fit explanatory 2PL IRT using train data
+3.  Predict the response data of test set using the parameter estimates 
+$$ Y \sim  Bernoulli(inv\_logit(\theta + (\mu + \Sigma_{m} \beta_{m}X_im + e))) $$
+4.  Calculate the classical based-correct rate
+
+### 6-1-1. Bayesian
+
+- Software: stan
+- Model: Rasch, 2PL
+
+### 6-1-2. Maximum Likelihood 
+
+- Software: lme4::glmer
+- Model: Rasch
+
+
+## 6-2. Machine learning Process
+
+1.  Calculate the classical-based correct rate based on the item X covariate matrix file
+2.  Split the data into train and test sets (item x covariate)
+3.  Fit machine learning model using train data
+4.  Predict the classical based-correct rate of test set
+
+**Questions**
+
+1.  In Kim and Ban (2024), 2018, 2019, 2022, 2023 responses are treated as one group?
+2.  In Kim and Ban (2024), 2018, 2019, 2022, 2023 have the same items?
+3.  In Kim and Ban (2024), 2018, 2019, 2022, 2023 have the same item covariate?
+
+
+**What I want**
+
+1.  Response data and Q matrix(item by covariate)
+2.  Multiple subjects (e.g., math, reading, ...)
+3.  Is there anyone who wants to run glmer?
+
+```{r}
+
+# if (!require(mirt)) install.packages("mirt")
+# library(mirt)
+# if (!require(lme4)) install.packages("lme4")
+# library(lme4)
+# if (!require(tidyr)) install.packages("tidyr")
+# library(tidyr)
+# 
+# # mrit Rasch
+# data = read.csv("data1.csv")
+# names(data)
+# mirtRasch = mirt(data = data[,3:7], model = 1, itemtype = "Rasch")
+# summary(mirtRasch)
+# mirtCoef = coef(mirtRasch,  IRTpars = TRUE, simplify = TRUE)$items[,"b"]
+# fscores(mirtRasch, full.scores.SE = TRUE)
+# 
+# # LME4 glmm
+# longdata = pivot_longer(widedata, item1:item5, names_to = "item", values_to = "response")
+# class(longdata)
+# longdata = as.data.frame(longdata)
+# longdata$itemF = factor(longdata$item)
+# 
+# #each group mean
+# control = glmerControl(optimizer = "optimx", 
+#                        calc.derivs = FALSE, 
+#                        optCtrl = list(method = "nlminb", 
+#                                       starttests = FALSE, 
+#                                       kkt = FALSE))
+# 
+# 
+# testModel = glmer(formula = response ~ 0 + itemF + (1 | Id), data = longdata,
+#       family = binomial(link = "logit"))
+# 
+# 
+# 
+# summary(testModel)
+# coef(summary(testModel))[,1]
+# 
+# # no theta
+# noTheta = glm(formula = response ~ 0 + itemF, data = longdata, family = binomial(link = "logit"))
+# summary(noTheta)
+# 
+# head(model.matrix(~ 0+itemF, data = longdata),10)
+# 
+# # correlation
+# cor(mirtCoef, -1 * coef(summary(testModel))[,1])
+
+
+```

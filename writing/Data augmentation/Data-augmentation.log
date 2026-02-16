@@ -1,0 +1,1065 @@
+This is pdfTeX, Version 3.141592653-2.6-1.40.28 (TeX Live 2025) (preloaded format=pdflatex 2025.9.23)  24 SEP 2025 17:58
+entering extended mode
+ restricted \write18 enabled.
+ %&-line parsing enabled.
+**Data-augmentation.tex
+(./Data-augmentation.tex
+LaTeX2e <2025-06-01> patch level 1
+L3 programming layer <2025-09-02>
+(./sn-jnl.cls
+Document Class: sn-jnl 2019/11/18 v0.1: An authoring template for Springer Journal articles
+(c:/Users/aekjung/AppData/Roaming/TinyTeX/texmf-dist/tex/latex/base/article.cls
+Document Class: article 2025/01/22 v1.4n Standard LaTeX document class
+(c:/Users/aekjung/AppData/Roaming/TinyTeX/texmf-dist/tex/latex/base/fleqn.clo
+File: fleqn.clo 2016/12/29 v1.2b Standard LaTeX option (flush left equations)
+\mathindent=\skip49
+Applying: [2015/01/01] Make \[ robust on input line 50.
+LaTeX Info: Redefining \[ on input line 51.
+Already applied: [0000/00/00] Make \[ robust on input line 62.
+Applying: [2015/01/01] Make \] robust on input line 74.
+LaTeX Info: Redefining \] on input line 75.
+Already applied: [0000/00/00] Make \] robust on input line 83.
+) (c:/Users/aekjung/AppData/Roaming/TinyTeX/texmf-dist/tex/latex/base/size10.clo
+File: size10.clo 2025/01/22 v1.4n Standard LaTeX file (size option)
+)
+\c@part=\count275
+\c@section=\count276
+\c@subsection=\count277
+\c@subsubsection=\count278
+\c@paragraph=\count279
+\c@subparagraph=\count280
+\c@figure=\count281
+\c@table=\count282
+\abovecaptionskip=\skip50
+\belowcaptionskip=\skip51
+\bibindent=\dimen148
+)
+LaTeX Info: Redefining \rm on input line 144.
+LaTeX Info: Redefining \sf on input line 145.
+LaTeX Info: Redefining \tt on input line 146.
+LaTeX Info: Redefining \bf on input line 147.
+LaTeX Info: Redefining \it on input line 148.
+LaTeX Info: Redefining \sl on input line 149.
+LaTeX Info: Redefining \sc on input line 150.
+LaTeX Info: Redefining \cal on input line 151.
+LaTeX Info: Redefining \mit on input line 152.
+LaTeX Info: Redefining \textsubscript on input line 210.
+\columnhsize=\skip52
+(c:/Users/aekjung/AppData/Roaming/TinyTeX/texmf-dist/tex/latex/geometry/geometry.sty
+Package: geometry 2020/01/02 v5.9 Page Geometry
+(c:/Users/aekjung/AppData/Roaming/TinyTeX/texmf-dist/tex/latex/graphics/keyval.sty
+Package: keyval 2022/05/29 v1.15 key=value parser (DPC)
+\KV@toks@=\toks17
+) (c:/Users/aekjung/AppData/Roaming/TinyTeX/texmf-dist/tex/generic/iftex/ifvtex.sty
+Package: ifvtex 2019/10/25 v1.7 ifvtex legacy package. Use iftex instead.
+(c:/Users/aekjung/AppData/Roaming/TinyTeX/texmf-dist/tex/generic/iftex/iftex.sty
+Package: iftex 2024/12/12 v1.0g TeX engine tests
+))
+\Gm@cnth=\count283
+\Gm@cntv=\count284
+\c@Gm@tempcnt=\count285
+\Gm@bindingoffset=\dimen149
+\Gm@wd@mp=\dimen150
+\Gm@odd@mp=\dimen151
+\Gm@even@mp=\dimen152
+\Gm@layoutwidth=\dimen153
+\Gm@layoutheight=\dimen154
+\Gm@layouthoffset=\dimen155
+\Gm@layoutvoffset=\dimen156
+\Gm@dimlist=\toks18
+)
+\artcatbox=\box53
+\aucount=\count286
+\corraucount=\count287
+\punctcount=\count288
+\emailcnt=\count289
+\c@affn=\count290
+\addcount=\count291
+\PacsCount=\count292
+\PacsTmpCnt=\count293
+\FMremarkdim=\dimen157
+\fmremarkbox=\box54
+(c:/Users/aekjung/AppData/Roaming/TinyTeX/texmf-dist/tex/latex/sttools/cuted.sty
+Package: cuted 2025/07/14 v2.6 Mixing onecolumn and twocolumn modes (ST)
+\At@ViperColsBreak=\toks19
+\preCutedStrip=\toks20
+\postCutedStrip=\toks21
+\cuted@@tempbox@a=\box55
+\cuted@@tempbox@c=\box56
+\cuted@@tempbox@var=\box57
+\hold@viper=\box58
+\@viper=\box59
+\cuted@@varbox@a=\box60
+\cuted@@varbox@c=\box61
+\cuted@@tempdim@spread=\dimen158
+\cuted@@tempdim@a=\dimen159
+\cuted@@tempdim@b=\dimen160
+\ht@hold@viper=\dimen161
+\ht@viper=\dimen162
+\var@@pagediscards@ht=\dimen163
+\stripsep=\skip53
+\viper@penalty=\count294
+\strip@page@discards=\dimen164
+)
+\firstpagehtcheck=\dimen165
+\labelwidthi=\dimen166
+\labelwidthii=\dimen167
+\labelwidthiii=\dimen168
+\labelwidthiv=\dimen169
+\figwidth=\dimen170
+\figheight=\dimen171
+\sidecapwidth=\dimen172
+\wrapcapline=\dimen173
+\totalwrapline=\dimen174
+\wraptotline=\dimen175
+\figurebox=\box62
+\wrapfigcapbox=\box63
+\figcapbox=\box64
+\capbox=\box65
+\headwidthskip=\skip54
+\tabcapbox=\box66
+\temptbox=\box67
+\tempdime=\dimen176
+\tabhtdime=\dimen177
+(c:/Users/aekjung/AppData/Roaming/TinyTeX/texmf-dist/tex/latex/graphics/rotating.sty
+Package: rotating 2025/01/14 v2.16e rotated objects in LaTeX
+(c:/Users/aekjung/AppData/Roaming/TinyTeX/texmf-dist/tex/latex/graphics/graphicx.sty
+Package: graphicx 2024/12/31 v1.2e Enhanced LaTeX Graphics (DPC,SPQR)
+(c:/Users/aekjung/AppData/Roaming/TinyTeX/texmf-dist/tex/latex/graphics/graphics.sty
+Package: graphics 2024/08/06 v1.4g Standard LaTeX Graphics (DPC,SPQR)
+(c:/Users/aekjung/AppData/Roaming/TinyTeX/texmf-dist/tex/latex/graphics/trig.sty
+Package: trig 2023/12/02 v1.11 sin cos tan (DPC)
+) (c:/Users/aekjung/AppData/Roaming/TinyTeX/texmf-dist/tex/latex/graphics-cfg/graphics.cfg
+File: graphics.cfg 2016/06/04 v1.11 sample graphics configuration
+)
+Package graphics Info: Driver file: pdftex.def on input line 106.
+(c:/Users/aekjung/AppData/Roaming/TinyTeX/texmf-dist/tex/latex/graphics-def/pdftex.def
+File: pdftex.def 2024/04/13 v1.2c Graphics/color driver for pdftex
+))
+\Gin@req@height=\dimen178
+\Gin@req@width=\dimen179
+) (c:/Users/aekjung/AppData/Roaming/TinyTeX/texmf-dist/tex/latex/base/ifthen.sty
+Package: ifthen 2024/03/16 v1.1e Standard LaTeX ifthen package (DPC)
+)
+\c@r@tfl@t=\count295
+\rotFPtop=\skip55
+\rotFPbot=\skip56
+\rot@float@box=\box68
+\rot@mess@toks=\toks22
+) (c:/Users/aekjung/AppData/Roaming/TinyTeX/texmf-dist/tex/latex/threeparttable/threeparttable.sty
+Package: threeparttable 2003/06/13  v 3.0
+\@tempboxb=\box69
+) (c:/Users/aekjung/AppData/Roaming/TinyTeX/texmf-dist/tex/latex/appendix/appendix.sty
+Package: appendix 2020/02/08 v1.2c extra appendix facilities
+\c@@pps=\count296
+\c@@ppsavesec=\count297
+\c@@ppsaveapp=\count298
+) (c:/Users/aekjung/AppData/Roaming/TinyTeX/texmf-dist/tex/latex/hyperref/hyperref.sty
+Package: hyperref 2025-07-12 v7.01o Hypertext links for LaTeX
+(c:/Users/aekjung/AppData/Roaming/TinyTeX/texmf-dist/tex/latex/kvsetkeys/kvsetkeys.sty
+Package: kvsetkeys 2022-10-05 v1.19 Key value parser (HO)
+) (c:/Users/aekjung/AppData/Roaming/TinyTeX/texmf-dist/tex/generic/kvdefinekeys/kvdefinekeys.sty
+Package: kvdefinekeys 2019-12-19 v1.6 Define keys (HO)
+) (c:/Users/aekjung/AppData/Roaming/TinyTeX/texmf-dist/tex/generic/pdfescape/pdfescape.sty
+Package: pdfescape 2019/12/09 v1.15 Implements pdfTeX's escape features (HO)
+(c:/Users/aekjung/AppData/Roaming/TinyTeX/texmf-dist/tex/generic/ltxcmds/ltxcmds.sty
+Package: ltxcmds 2023-12-04 v1.26 LaTeX kernel commands for general use (HO)
+) (c:/Users/aekjung/AppData/Roaming/TinyTeX/texmf-dist/tex/generic/pdftexcmds/pdftexcmds.sty
+Package: pdftexcmds 2020-06-27 v0.33 Utility functions of pdfTeX for LuaTeX (HO)
+(c:/Users/aekjung/AppData/Roaming/TinyTeX/texmf-dist/tex/generic/infwarerr/infwarerr.sty
+Package: infwarerr 2019/12/03 v1.5 Providing info/warning/error messages (HO)
+)
+Package pdftexcmds Info: \pdf@primitive is available.
+Package pdftexcmds Info: \pdf@ifprimitive is available.
+Package pdftexcmds Info: \pdfdraftmode found.
+)) (c:/Users/aekjung/AppData/Roaming/TinyTeX/texmf-dist/tex/latex/hycolor/hycolor.sty
+Package: hycolor 2020-01-27 v1.10 Color options for hyperref/bookmark (HO)
+) (c:/Users/aekjung/AppData/Roaming/TinyTeX/texmf-dist/tex/latex/hyperref/nameref.sty
+Package: nameref 2025-06-21 v2.57 Cross-referencing by name of section
+(c:/Users/aekjung/AppData/Roaming/TinyTeX/texmf-dist/tex/latex/refcount/refcount.sty
+Package: refcount 2019/12/15 v3.6 Data extraction from label references (HO)
+) (c:/Users/aekjung/AppData/Roaming/TinyTeX/texmf-dist/tex/generic/gettitlestring/gettitlestring.sty
+Package: gettitlestring 2019/12/15 v1.6 Cleanup title references (HO)
+(c:/Users/aekjung/AppData/Roaming/TinyTeX/texmf-dist/tex/latex/kvoptions/kvoptions.sty
+Package: kvoptions 2022-06-15 v3.15 Key value format for package options (HO)
+))
+\c@section@level=\count299
+) (c:/Users/aekjung/AppData/Roaming/TinyTeX/texmf-dist/tex/latex/etoolbox/etoolbox.sty
+Package: etoolbox 2025/02/11 v2.5l e-TeX tools for LaTeX (JAW)
+\etb@tempcnta=\count300
+) (c:/Users/aekjung/AppData/Roaming/TinyTeX/texmf-dist/tex/generic/stringenc/stringenc.sty
+Package: stringenc 2019/11/29 v1.12 Convert strings between diff. encodings (HO)
+)
+\@linkdim=\dimen180
+\Hy@linkcounter=\count301
+\Hy@pagecounter=\count302
+(c:/Users/aekjung/AppData/Roaming/TinyTeX/texmf-dist/tex/latex/hyperref/pd1enc.def
+File: pd1enc.def 2025-07-12 v7.01o Hyperref: PDFDocEncoding definition (HO)
+Now handling font encoding PD1 ...
+... no UTF-8 mapping file for font encoding PD1
+) (c:/Users/aekjung/AppData/Roaming/TinyTeX/texmf-dist/tex/generic/intcalc/intcalc.sty
+Package: intcalc 2019/12/15 v1.3 Expandable calculations with integers (HO)
+)
+\Hy@SavedSpaceFactor=\count303
+(c:/Users/aekjung/AppData/Roaming/TinyTeX/texmf-dist/tex/latex/hyperref/puenc.def
+File: puenc.def 2025-07-12 v7.01o Hyperref: PDF Unicode definition (HO)
+Now handling font encoding PU ...
+... no UTF-8 mapping file for font encoding PU
+)
+Package hyperref Info: Hyper figures OFF on input line 4195.
+Package hyperref Info: Link nesting OFF on input line 4200.
+Package hyperref Info: Hyper index ON on input line 4203.
+Package hyperref Info: Plain pages OFF on input line 4210.
+Package hyperref Info: Backreferencing OFF on input line 4215.
+Package hyperref Info: Implicit mode ON; LaTeX internals redefined.
+Package hyperref Info: Bookmarks ON on input line 4462.
+\c@Hy@tempcnt=\count304
+(c:/Users/aekjung/AppData/Roaming/TinyTeX/texmf-dist/tex/latex/url/url.sty
+\Urlmuskip=\muskip17
+Package: url 2013/09/16  ver 3.4  Verb mode for urls, etc.
+)
+LaTeX Info: Redefining \url on input line 4801.
+\XeTeXLinkMargin=\dimen181
+(c:/Users/aekjung/AppData/Roaming/TinyTeX/texmf-dist/tex/generic/bitset/bitset.sty
+Package: bitset 2019/12/09 v1.3 Handle bit-vector datatype (HO)
+(c:/Users/aekjung/AppData/Roaming/TinyTeX/texmf-dist/tex/generic/bigintcalc/bigintcalc.sty
+Package: bigintcalc 2019/12/15 v1.5 Expandable calculations on big integers (HO)
+))
+\Fld@menulength=\count305
+\Field@Width=\dimen182
+\Fld@charsize=\dimen183
+Package hyperref Info: Hyper figures OFF on input line 6078.
+Package hyperref Info: Link nesting OFF on input line 6083.
+Package hyperref Info: Hyper index ON on input line 6086.
+Package hyperref Info: backreferencing OFF on input line 6093.
+Package hyperref Info: Link coloring OFF on input line 6098.
+Package hyperref Info: Link coloring with OCG OFF on input line 6103.
+Package hyperref Info: PDF/A mode OFF on input line 6108.
+\Hy@abspage=\count306
+\c@Item=\count307
+\c@Hfootnote=\count308
+)
+Package hyperref Info: Driver (autodetected): hpdftex.
+(c:/Users/aekjung/AppData/Roaming/TinyTeX/texmf-dist/tex/latex/hyperref/hpdftex.def
+File: hpdftex.def 2025-07-12 v7.01o Hyperref driver for pdfTeX
+\Fld@listcount=\count309
+\c@bookmark@seq@number=\count310
+(c:/Users/aekjung/AppData/Roaming/TinyTeX/texmf-dist/tex/latex/rerunfilecheck/rerunfilecheck.sty
+Package: rerunfilecheck 2025-06-21 v1.11 Rerun checks for auxiliary files (HO)
+(c:/Users/aekjung/AppData/Roaming/TinyTeX/texmf-dist/tex/generic/uniquecounter/uniquecounter.sty
+Package: uniquecounter 2019/12/15 v1.4 Provide unlimited unique counter (HO)
+)
+Package uniquecounter Info: New unique counter `rerunfilecheck' on input line 284.
+)
+\Hy@SectionHShift=\skip57
+)
+Package hyperref Info: Option `colorlinks' set `true' on input line 1483.
+Package hyperref Info: Option `breaklinks' set `true' on input line 1483.
+Package hyperref Info: Option `plainpages' set `false' on input line 1483.
+Package hyperref Info: Option `bookmarksopen' set `true' on input line 1483.
+Package hyperref Info: Option `bookmarksnumbered' set `false' on input line 1483.
+(c:/Users/aekjung/AppData/Roaming/TinyTeX/texmf-dist/tex/latex/wrapfig/wrapfig.sty
+\wrapoverhang=\dimen184
+\WF@size=\dimen185
+\c@WF@wrappedlines=\count311
+\WF@box=\box70
+\WF@everypar=\toks23
+Package: wrapfig 2003/01/31  v 3.6
+)
+\wraplines=\count312
+\@authorfigbox=\box71
+\@authorfigboxdim=\skip58
+\biofigadjskip=\skip59
+(c:/Users/aekjung/AppData/Roaming/TinyTeX/texmf-dist/tex/latex/natbib/natbib.sty
+Package: natbib 2010/09/13 8.31b (PWD, AO)
+\bibhang=\skip60
+\bibsep=\skip61
+LaTeX Info: Redefining \cite on input line 694.
+\c@NAT@ctr=\count313
+)) (c:/Users/aekjung/AppData/Roaming/TinyTeX/texmf-dist/tex/latex/multirow/multirow.sty
+Package: multirow 2024/11/12 v2.9 Span multiple rows of a table
+\multirow@colwidth=\skip62
+\multirow@cntb=\count314
+\multirow@dima=\skip63
+\bigstrutjot=\dimen186
+) (c:/Users/aekjung/AppData/Roaming/TinyTeX/texmf-dist/tex/latex/amsmath/amsmath.sty
+Package: amsmath 2025/06/16 v2.17y AMS math features
+\@mathmargin=\skip64
+For additional information on amsmath, use the `?' option.
+(c:/Users/aekjung/AppData/Roaming/TinyTeX/texmf-dist/tex/latex/amsmath/amstext.sty
+Package: amstext 2024/11/17 v2.01 AMS text
+(c:/Users/aekjung/AppData/Roaming/TinyTeX/texmf-dist/tex/latex/amsmath/amsgen.sty
+File: amsgen.sty 1999/11/30 v2.0 generic functions
+\@emptytoks=\toks24
+\ex@=\dimen187
+)) (c:/Users/aekjung/AppData/Roaming/TinyTeX/texmf-dist/tex/latex/amsmath/amsbsy.sty
+Package: amsbsy 1999/11/29 v1.2d Bold Symbols
+\pmbraise@=\dimen188
+) (c:/Users/aekjung/AppData/Roaming/TinyTeX/texmf-dist/tex/latex/amsmath/amsopn.sty
+Package: amsopn 2022/04/08 v2.04 operator names
+)
+\inf@bad=\count315
+LaTeX Info: Redefining \frac on input line 233.
+\uproot@=\count316
+\leftroot@=\count317
+LaTeX Info: Redefining \overline on input line 398.
+LaTeX Info: Redefining \colon on input line 409.
+\classnum@=\count318
+\DOTSCASE@=\count319
+LaTeX Info: Redefining \ldots on input line 495.
+LaTeX Info: Redefining \dots on input line 498.
+LaTeX Info: Redefining \cdots on input line 619.
+\Mathstrutbox@=\box72
+\strutbox@=\box73
+LaTeX Info: Redefining \big on input line 721.
+LaTeX Info: Redefining \Big on input line 722.
+LaTeX Info: Redefining \bigg on input line 723.
+LaTeX Info: Redefining \Bigg on input line 724.
+\big@size=\dimen189
+LaTeX Font Info:    Redeclaring font encoding OML on input line 742.
+LaTeX Font Info:    Redeclaring font encoding OMS on input line 743.
+\macc@depth=\count320
+LaTeX Info: Redefining \bmod on input line 904.
+LaTeX Info: Redefining \pmod on input line 909.
+LaTeX Info: Redefining \smash on input line 939.
+LaTeX Info: Redefining \relbar on input line 969.
+LaTeX Info: Redefining \Relbar on input line 970.
+\c@MaxMatrixCols=\count321
+\dotsspace@=\muskip18
+\c@parentequation=\count322
+\dspbrk@lvl=\count323
+\tag@help=\toks25
+\row@=\count324
+\column@=\count325
+\maxfields@=\count326
+\andhelp@=\toks26
+\eqnshift@=\dimen190
+\alignsep@=\dimen191
+\tagshift@=\dimen192
+\tagwidth@=\dimen193
+\totwidth@=\dimen194
+\lineht@=\dimen195
+\@envbody=\toks27
+\multlinegap=\skip65
+\multlinetaggap=\skip66
+\mathdisplay@stack=\toks28
+LaTeX Info: Redefining \[ on input line 2949.
+LaTeX Info: Redefining \] on input line 2950.
+) (c:/Users/aekjung/AppData/Roaming/TinyTeX/texmf-dist/tex/latex/amsfonts/amssymb.sty
+Package: amssymb 2013/01/14 v3.01 AMS font symbols
+(c:/Users/aekjung/AppData/Roaming/TinyTeX/texmf-dist/tex/latex/amsfonts/amsfonts.sty
+Package: amsfonts 2013/01/14 v3.01 Basic AMSFonts support
+\symAMSa=\mathgroup4
+\symAMSb=\mathgroup5
+LaTeX Font Info:    Redeclaring math symbol \hbar on input line 98.
+LaTeX Font Info:    Overwriting math alphabet `\mathfrak' in version `bold'
+(Font)                  U/euf/m/n --> U/euf/b/n on input line 106.
+)) (c:/Users/aekjung/AppData/Roaming/TinyTeX/texmf-dist/tex/latex/amscls/amsthm.sty
+Package: amsthm 2020/05/29 v2.20.6
+\thm@style=\toks29
+\thm@bodyfont=\toks30
+\thm@headfont=\toks31
+\thm@notefont=\toks32
+\thm@headpunct=\toks33
+\thm@preskip=\skip67
+\thm@postskip=\skip68
+\thm@headsep=\skip69
+\dth@everypar=\toks34
+) (c:/Users/aekjung/AppData/Roaming/TinyTeX/texmf-dist/tex/latex/jknapltx/mathrsfs.sty
+Package: mathrsfs 1996/01/01 Math RSFS package v1.0 (jk)
+\symrsfs=\mathgroup6
+) (c:/Users/aekjung/AppData/Roaming/TinyTeX/texmf-dist/tex/latex/xcolor/xcolor.sty
+Package: xcolor 2024/09/29 v3.02 LaTeX color extensions (UK)
+(c:/Users/aekjung/AppData/Roaming/TinyTeX/texmf-dist/tex/latex/graphics-cfg/color.cfg
+File: color.cfg 2016/01/02 v1.6 sample color configuration
+)
+Package xcolor Info: Driver file: pdftex.def on input line 274.
+(c:/Users/aekjung/AppData/Roaming/TinyTeX/texmf-dist/tex/latex/graphics/mathcolor.ltx)
+Package xcolor Info: Model `cmy' substituted by `cmy0' on input line 1349.
+Package xcolor Info: Model `hsb' substituted by `rgb' on input line 1353.
+Package xcolor Info: Model `RGB' extended on input line 1365.
+Package xcolor Info: Model `HTML' substituted by `rgb' on input line 1367.
+Package xcolor Info: Model `Hsb' substituted by `hsb' on input line 1368.
+Package xcolor Info: Model `tHsb' substituted by `hsb' on input line 1369.
+Package xcolor Info: Model `HSB' substituted by `hsb' on input line 1370.
+Package xcolor Info: Model `Gray' substituted by `gray' on input line 1371.
+Package xcolor Info: Model `wave' substituted by `hsb' on input line 1372.
+) (c:/Users/aekjung/AppData/Roaming/TinyTeX/texmf-dist/tex/latex/base/textcomp.sty
+Package: textcomp 2024/04/24 v2.1b Standard LaTeX package
+) (c:/Users/aekjung/AppData/Roaming/TinyTeX/texmf-dist/tex/latex/ncctools/manyfoot.sty
+Package: manyfoot 2019/08/03 v1.11 Many Footnote Levels Package (NCC)
+(c:/Users/aekjung/AppData/Roaming/TinyTeX/texmf-dist/tex/latex/ncctools/nccfoots.sty
+Package: nccfoots 2005/02/03 v1.2 NCC Footnotes Package (NCC)
+)
+\MFL@columnwidth=\dimen196
+) (c:/Users/aekjung/AppData/Roaming/TinyTeX/texmf-dist/tex/latex/booktabs/booktabs.sty
+Package: booktabs 2020/01/12 v1.61803398 Publication quality tables
+\heavyrulewidth=\dimen197
+\lightrulewidth=\dimen198
+\cmidrulewidth=\dimen199
+\belowrulesep=\dimen256
+\belowbottomsep=\dimen257
+\aboverulesep=\dimen258
+\abovetopsep=\dimen259
+\cmidrulesep=\dimen260
+\cmidrulekern=\dimen261
+\defaultaddspace=\dimen262
+\@cmidla=\count327
+\@cmidlb=\count328
+\@aboverulesep=\dimen263
+\@belowrulesep=\dimen264
+\@thisruleclass=\count329
+\@lastruleclass=\count330
+\@thisrulewidth=\dimen265
+) (c:/Users/aekjung/AppData/Roaming/TinyTeX/texmf-dist/tex/latex/algorithms/algorithm.sty
+Package: algorithm 2009/08/24 v0.1 Document Style `algorithm' - floating environment
+(c:/Users/aekjung/AppData/Roaming/TinyTeX/texmf-dist/tex/latex/float/float.sty
+Package: float 2001/11/08 v1.3d Float enhancements (AL)
+\c@float@type=\count331
+\float@exts=\toks35
+\float@box=\box74
+\@float@everytoks=\toks36
+\@floatcapt=\box75
+)
+\@float@every@algorithm=\toks37
+\c@algorithm=\count332
+) (c:/Users/aekjung/AppData/Roaming/TinyTeX/texmf-dist/tex/latex/algorithmicx/algorithmicx.sty
+Package: algorithmicx 2005/04/27 v1.2 Algorithmicx
+Document Style algorithmicx 1.2 - a greatly improved `algorithmic' style
+\c@ALG@line=\count333
+\c@ALG@rem=\count334
+\c@ALG@nested=\count335
+\ALG@tlm=\skip70
+\ALG@thistlm=\skip71
+\c@ALG@Lnr=\count336
+\c@ALG@blocknr=\count337
+\c@ALG@storecount=\count338
+\c@ALG@tmpcounter=\count339
+\ALG@tmplength=\skip72
+) (c:/Users/aekjung/AppData/Roaming/TinyTeX/texmf-dist/tex/latex/algorithmicx/algpseudocode.sty
+Package: algpseudocode 
+Document Style - pseudocode environments for use with the `algorithmicx' style
+) (c:/Users/aekjung/AppData/Roaming/TinyTeX/texmf-dist/tex/latex/listings/listings.sty
+\lst@mode=\count340
+\lst@gtempboxa=\box76
+\lst@token=\toks38
+\lst@length=\count341
+\lst@currlwidth=\dimen266
+\lst@column=\count342
+\lst@pos=\count343
+\lst@lostspace=\dimen267
+\lst@width=\dimen268
+\lst@newlines=\count344
+\lst@lineno=\count345
+\lst@maxwidth=\dimen269
+(c:/Users/aekjung/AppData/Roaming/TinyTeX/texmf-dist/tex/latex/listings/lstpatch.sty
+File: lstpatch.sty 2024/09/23 1.10c (Carsten Heinz)
+) (c:/Users/aekjung/AppData/Roaming/TinyTeX/texmf-dist/tex/latex/listings/lstmisc.sty
+File: lstmisc.sty 2024/09/23 1.10c (Carsten Heinz)
+\c@lstnumber=\count346
+\lst@skipnumbers=\count347
+\lst@framebox=\box77
+) (c:/Users/aekjung/AppData/Roaming/TinyTeX/texmf-dist/tex/latex/listings/listings.cfg
+File: listings.cfg 2024/09/23 1.10c listings configuration
+))
+Package: listings 2024/09/23 1.10c (Carsten Heinz)
+\c@theorem=\count348
+\c@example=\count349
+\c@remark=\count350
+\c@definition=\count351
+(c:/Users/aekjung/AppData/Roaming/TinyTeX/texmf-dist/tex/latex/tools/longtable.sty
+Package: longtable 2024-12-18 v4.23 Multi-page Table package (DPC)
+\LTleft=\skip73
+\LTright=\skip74
+\LTpre=\skip75
+\LTpost=\skip76
+\LTchunksize=\count352
+\LTcapwidth=\dimen270
+\LT@head=\box78
+\LT@firsthead=\box79
+\LT@foot=\box80
+\LT@lastfoot=\box81
+\LT@gbox=\box82
+\LT@cols=\count353
+\LT@rows=\count354
+\c@LT@tables=\count355
+\c@LT@chunks=\count356
+\LT@p@ftn=\toks39
+) (c:/Users/aekjung/AppData/Roaming/TinyTeX/texmf-dist/tex/latex/tools/array.sty
+Package: array 2025/06/08 v2.6j Tabular extension package (FMi)
+\col@sep=\dimen271
+\ar@mcellbox=\box83
+\extrarowheight=\dimen272
+\NC@list=\toks40
+\extratabsurround=\skip77
+\backup@length=\skip78
+\ar@cellbox=\box84
+) (c:/Users/aekjung/AppData/Roaming/TinyTeX/texmf-dist/tex/latex/colortbl/colortbl.sty
+Package: colortbl 2024/10/29 v1.0k Color table columns (DPC)
+\everycr=\toks41
+\minrowclearance=\skip79
+\rownum=\count357
+) (c:/Users/aekjung/AppData/Roaming/TinyTeX/texmf-dist/tex/latex/pdflscape/pdflscape.sty
+Package: pdflscape 2025-06-23 v0.14 Display of landscape pages in PDF
+(c:/Users/aekjung/AppData/Roaming/TinyTeX/texmf-dist/tex/latex/pdflscape/pdflscape-nometadata.sty
+Package: pdflscape-nometadata 2025-06-23 v0.14 Display of landscape pages in PDF (HO)
+(c:/Users/aekjung/AppData/Roaming/TinyTeX/texmf-dist/tex/latex/graphics/lscape.sty
+Package: lscape 2020/05/28 v3.02 Landscape Pages (DPC)
+)
+Package pdflscape Info: Auto-detected driver: pdftex on input line 81.
+)) (c:/Users/aekjung/AppData/Roaming/TinyTeX/texmf-dist/tex/latex/tabu/tabu.sty
+Package: tabu 2019/01/11 v2.9 - flexible LaTeX tabulars (FC+tabu-fixed)
+(c:/Users/aekjung/AppData/Roaming/TinyTeX/texmf-dist/tex/latex/varwidth/varwidth.sty
+Package: varwidth 2009/03/30 ver 0.92;  Variable-width minipages
+\@vwid@box=\box85
+\sift@deathcycles=\count358
+\@vwid@loff=\dimen273
+\@vwid@roff=\dimen274
+)
+==> First Aid for varwidth.sty applied!
+\c@taburow=\count359
+\tabu@nbcols=\count360
+\tabu@cnt=\count361
+\tabu@Xcol=\count362
+\tabu@alloc=\count363
+\tabu@nested=\count364
+\tabu@target=\dimen275
+\tabu@spreadtarget=\dimen276
+\tabu@naturalX=\dimen277
+\tabucolX=\dimen278
+\tabu@Xsum=\dimen279
+\extrarowdepth=\dimen280
+\abovetabulinesep=\dimen281
+\belowtabulinesep=\dimen282
+\tabustrutrule=\dimen283
+\tabu@thebody=\toks42
+\tabu@footnotes=\toks43
+\tabu@box=\box86
+\tabu@arstrutbox=\box87
+\tabu@hleads=\box88
+\tabu@vleads=\box89
+\tabu@cellskip=\skip80
+) (c:/Users/aekjung/AppData/Roaming/TinyTeX/texmf-dist/tex/latex/threeparttablex/threeparttablex.sty
+Package: threeparttablex 2013/07/23 v0.3 by daleif
+(c:/Users/aekjung/AppData/Roaming/TinyTeX/texmf-dist/tex/latex/environ/environ.sty
+Package: environ 2014/05/04 v0.3 A new way to define environments
+(c:/Users/aekjung/AppData/Roaming/TinyTeX/texmf-dist/tex/latex/trimspaces/trimspaces.sty
+Package: trimspaces 2009/09/17 v1.1 Trim spaces around a token list
+))
+\TPTL@width=\skip81
+) (c:/Users/aekjung/AppData/Roaming/TinyTeX/texmf-dist/tex/generic/ulem/ulem.sty
+\UL@box=\box90
+\UL@hyphenbox=\box91
+\UL@skip=\skip82
+\UL@hook=\toks44
+\UL@height=\dimen284
+\UL@pe=\count365
+\UL@pixel=\dimen285
+\ULC@box=\box92
+Package: ulem 2019/11/18
+\ULdepth=\dimen286
+) (c:/Users/aekjung/AppData/Roaming/TinyTeX/texmf-dist/tex/latex/makecell/makecell.sty
+Package: makecell 2009/08/03 V0.1e Managing of Tab Column Heads and Cells
+\rotheadsize=\dimen287
+\c@nlinenum=\count366
+\TeXr@lab=\toks45
+) (c:/Users/aekjung/AppData/Roaming/TinyTeX/texmf-dist/tex/latex/l3backend/l3backend-pdftex.def
+File: l3backend-pdftex.def 2025-06-09 L3 backend support: PDF output (pdfTeX)
+\l__color_backend_stack_int=\count367
+) (./Data-augmentation.aux)
+\openout1 = `Data-augmentation.aux'.
+
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 96.
+LaTeX Font Info:    ... okay on input line 96.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 96.
+LaTeX Font Info:    ... okay on input line 96.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 96.
+LaTeX Font Info:    ... okay on input line 96.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 96.
+LaTeX Font Info:    ... okay on input line 96.
+LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 96.
+LaTeX Font Info:    ... okay on input line 96.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 96.
+LaTeX Font Info:    ... okay on input line 96.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 96.
+LaTeX Font Info:    ... okay on input line 96.
+LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 96.
+LaTeX Font Info:    ... okay on input line 96.
+LaTeX Font Info:    Checking defaults for PU/pdf/m/n on input line 96.
+LaTeX Font Info:    ... okay on input line 96.
+\footinsA=\insert252
+\c@footnoteA=\count368
+*geometry* driver: auto-detecting
+*geometry* detected driver: pdftex
+*geometry* verbose mode - [ preamble ] result:
+* driver: pdftex
+* paper: custom
+* layout: <same size as paper>
+* layoutoffset:(h,v)=(0.0pt,0.0pt)
+* bindingoffset: 17.07164pt
+* modes: twoside 
+* h-part:(L,W,R)=(83.37448pt, 372.0pt, 125.06175pt)
+* v-part:(T,H,B)=(73.97716pt, 552.69478pt, 218.37491pt)
+* \paperwidth=597.50787pt
+* \paperheight=845.04684pt
+* \textwidth=372.0pt
+* \textheight=552.69478pt
+* \oddsidemargin=28.17613pt
+* \evensidemargin=52.79176pt
+* \topmargin=-19.72638pt
+* \headheight=5.5pt
+* \headsep=15.93355pt
+* \topskip=10.0pt
+* \footskip=28.45274pt
+* \marginparwidth=34.1433pt
+* \marginparsep=14.22636pt
+* \columnsep=14.22636pt
+* \skip\footins=8.0pt plus 4.0pt
+* \hoffset=0.0pt
+* \voffset=0.0pt
+* \mag=1000
+* \@twocolumnfalse
+* \@twosidetrue
+* \@mparswitchtrue
+* \@reversemargintrue
+* (1in=72.27pt=25.4mm, 1cm=28.453pt)
+
+(c:/Users/aekjung/AppData/Roaming/TinyTeX/texmf-dist/tex/latex/epstopdf-pkg/epstopdf-base.sty
+Package: epstopdf-base 2020-01-24 v2.11 Base part for package epstopdf
+Package epstopdf-base Info: Redefining graphics rule for `.eps' on input line 485.
+(c:/Users/aekjung/AppData/Roaming/TinyTeX/texmf-dist/tex/latex/latexconfig/epstopdf-sys.cfg
+File: epstopdf-sys.cfg 2010/07/13 v1.3 Configuration of (r)epstopdf for TeX Live
+))
+Package hyperref Info: Link coloring ON on input line 96.
+(./Data-augmentation.out) (./Data-augmentation.out)
+\@outlinefile=\write3
+\openout3 = `Data-augmentation.out'.
+
+\c@lstlisting=\count369
+LaTeX Font Info:    Calculating math sizes for size <12.045> on input line 139.
+
+LaTeX Font Warning: Font shape `OT1/cmr/bx/n' in size <8.43146> not available
+(Font)              size <8> substituted on input line 139.
+
+
+LaTeX Font Warning: Font shape `OML/cmm/b/it' in size <8.43146> not available
+(Font)              size <8> substituted on input line 139.
+
+
+LaTeX Font Warning: Font shape `OMS/cmsy/b/n' in size <8.43146> not available
+(Font)              size <8> substituted on input line 139.
+
+LaTeX Font Info:    Trying to load font information for U+msa on input line 139.
+(c:/Users/aekjung/AppData/Roaming/TinyTeX/texmf-dist/tex/latex/amsfonts/umsa.fd
+File: umsa.fd 2013/01/14 v3.01 AMS symbols A
+)
+LaTeX Font Info:    Trying to load font information for U+msb on input line 139.
+(c:/Users/aekjung/AppData/Roaming/TinyTeX/texmf-dist/tex/latex/amsfonts/umsb.fd
+File: umsb.fd 2013/01/14 v3.01 AMS symbols B
+)
+LaTeX Font Info:    Trying to load font information for U+rsfs on input line 139.
+(c:/Users/aekjung/AppData/Roaming/TinyTeX/texmf-dist/tex/latex/jknapltx/ursfs.fd
+File: ursfs.fd 1998/03/24 rsfs font definition file (jk)
+)
+
+LaTeX Font Warning: Font shape `U/rsfs/m/n' in size <8.43146> not available
+(Font)              size <8> substituted on input line 139.
+
+
+LaTeX Font Warning: Font shape `OT1/cmr/m/n' in size <8.43146> not available
+(Font)              size <8> substituted on input line 139.
+
+LaTeX Font Info:    Calculating math sizes for size <11.04124> on input line 139.
+
+LaTeX Font Warning: Font shape `OT1/cmr/bx/n' in size <5.52061> not available
+(Font)              size <6> substituted on input line 139.
+
+
+LaTeX Font Warning: Font shape `OML/cmm/b/it' in size <5.52061> not available
+(Font)              size <6> substituted on input line 139.
+
+
+LaTeX Font Warning: Font shape `OMS/cmsy/b/n' in size <5.52061> not available
+(Font)              size <6> substituted on input line 139.
+
+
+LaTeX Font Warning: Font shape `U/rsfs/m/n' in size <5.52061> not available
+(Font)              size <6> substituted on input line 139.
+
+LaTeX Font Info:    Calculating math sizes for size <10.03749> on input line 139.
+<Data-augmentation_files/figure-latex/plot_data_distribution-1.pdf, id=69, 469.755pt x 325.215pt>
+File: Data-augmentation_files/figure-latex/plot_data_distribution-1.pdf Graphic file (type pdf)
+<use Data-augmentation_files/figure-latex/plot_data_distribution-1.pdf>
+Package pdftex.def Info: Data-augmentation_files/figure-latex/plot_data_distribution-1.pdf  used on input line 140.
+(pdftex.def)             Requested size: 469.75386pt x 325.2142pt.
+
+Overfull \hbox (97.75386pt too wide) in paragraph at lines 140--140
+ [] 
+ []
+
+
+
+
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+[1
+
+{c:/Users/aekjung/AppData/Roaming/TinyTeX/texmf-var/fonts/map/pdftex/updmap/pdftex.map}]
+Overfull \hbox (42.74638pt too wide) in paragraph at lines 164--164
+[]\OT1/cmtt/m/n/10 ##  [1] 0.003015075 0.002010050 0.007035176 0.003015075 0.005025126 0.008040201[] 
+ []
+
+
+Overfull \hbox (42.74638pt too wide) in paragraph at lines 164--164
+[]\OT1/cmtt/m/n/10 ##  [7] 0.017085427 0.020100503 0.037185930 0.036180905 0.047236181 0.014070352[] 
+ []
+
+
+
+
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+[2 <./Data-augmentation_files/figure-latex/plot_data_distribution-1.pdf>]
+<Data-augmentation_files/figure-latex/plot_data_distribution-2.pdf, id=94, 469.755pt x 325.215pt>
+File: Data-augmentation_files/figure-latex/plot_data_distribution-2.pdf Graphic file (type pdf)
+<use Data-augmentation_files/figure-latex/plot_data_distribution-2.pdf>
+Package pdftex.def Info: Data-augmentation_files/figure-latex/plot_data_distribution-2.pdf  used on input line 166.
+(pdftex.def)             Requested size: 469.75386pt x 325.2142pt.
+
+Overfull \hbox (97.75386pt too wide) in paragraph at lines 166--166
+ [] 
+ []
+
+
+Overfull \hbox (42.74638pt too wide) in paragraph at lines 190--190
+[]\OT1/cmtt/m/n/10 ##  [1] 0.004020101 0.011055276 0.004020101 0.011055276 0.020100503 0.035175879[] 
+ []
+
+
+
+
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+[3 <./Data-augmentation_files/figure-latex/plot_data_distribution-2.pdf>]
+<../../Plot_pctCTT_random.png, id=105, 1156.32pt x 722.7pt>
+File: ../../Plot_pctCTT_random.png Graphic file (type png)
+<use ../../Plot_pctCTT_random.png>
+Package pdftex.def Info: ../../Plot_pctCTT_random.png  used on input line 219.
+(pdftex.def)             Requested size: 297.60114pt x 186.00082pt.
+<../../Plot_pctIRT_random.png, id=106, 1156.32pt x 722.7pt>
+File: ../../Plot_pctIRT_random.png Graphic file (type png)
+<use ../../Plot_pctIRT_random.png>
+Package pdftex.def Info: ../../Plot_pctIRT_random.png  used on input line 227.
+(pdftex.def)             Requested size: 297.60114pt x 186.00082pt.
+
+
+
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+[4]
+
+
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+[5
+pdfTeX warning (ext4): destination with the same identifier (name{figure.1}) has been already used, duplicate ignored
+<argument> ...shipout:D \box_use:N \l_shipout_box 
+                                                  \__shipout_drop_firstpage_...
+l.246 
+      
+pdfTeX warning (ext4): destination with the same identifier (name{figure.2}) has been already used, duplicate ignored
+<argument> ...shipout:D \box_use:N \l_shipout_box 
+                                                  \__shipout_drop_firstpage_...
+l.246 
+       <../../Plot_pctCTT_random.png> <../../Plot_pctIRT_random.png>]
+
+
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+[6]
+
+
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+[7]
+LaTeX Font Info:    Calculating math sizes for size <8.03> on input line 353.
+
+LaTeX Font Warning: Font shape `OT1/cmr/m/n' in size <4.015> not available
+(Font)              size <5> substituted on input line 353.
+
+
+LaTeX Font Warning: Font shape `OML/cmm/m/it' in size <4.015> not available
+(Font)              size <5> substituted on input line 353.
+
+
+LaTeX Font Warning: Font shape `OMS/cmsy/m/n' in size <4.015> not available
+(Font)              size <5> substituted on input line 353.
+
+
+LaTeX Font Warning: Font shape `U/rsfs/m/n' in size <4.015> not available
+(Font)              size <5> substituted on input line 353.
+
+
+Overfull \hbox (56.3508pt too wide) in paragraph at lines 349--397
+ [] 
+ []
+
+
+LaTeX Warning: No positions in optional float specifier.
+               Default added (so using `tbp') on input line 400.
+
+
+
+
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+[8
+pdfTeX warning (ext4): destination with the same identifier (name{table.1}) has been already used, duplicate ignored
+<argument> ...shipout:D \box_use:N \l_shipout_box 
+                                                  \__shipout_drop_firstpage_...
+l.422 \newpage
+              ]
+<../../6. plot_Lasso_RMSE.png, id=132, 578.16pt x 433.62pt>
+File: ../../6. plot_Lasso_RMSE.png Graphic file (type png)
+<use ../../6. plot_Lasso_RMSE.png>
+Package pdftex.def Info: ../../6. plot_Lasso_RMSE.png  used on input line 426.
+(pdftex.def)             Requested size: 297.60114pt x 223.201pt.
+<../../6. plot_Lasso_MAE.png, id=133, 578.16pt x 433.62pt>
+File: ../../6. plot_Lasso_MAE.png Graphic file (type png)
+<use ../../6. plot_Lasso_MAE.png>
+Package pdftex.def Info: ../../6. plot_Lasso_MAE.png  used on input line 434.
+(pdftex.def)             Requested size: 297.60114pt x 223.201pt.
+<../../6. plot_Lasso_R2.png, id=134, 578.16pt x 433.62pt>
+File: ../../6. plot_Lasso_R2.png Graphic file (type png)
+<use ../../6. plot_Lasso_R2.png>
+Package pdftex.def Info: ../../6. plot_Lasso_R2.png  used on input line 442.
+(pdftex.def)             Requested size: 297.60114pt x 223.201pt.
+
+
+
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+[9
+pdfTeX warning (ext4): destination with the same identifier (name{table.2}) has been already used, duplicate ignored
+<argument> ...shipout:D \box_use:N \l_shipout_box 
+                                                  \__shipout_drop_firstpage_...
+l.447 \end{figure}
+                  
+pdfTeX warning (ext4): destination with the same identifier (name{figure.3}) has been already used, duplicate ignored
+<argument> ...shipout:D \box_use:N \l_shipout_box 
+                                                  \__shipout_drop_firstpage_...
+l.447 \end{figure}
+                   <../../6. plot_Lasso_RMSE.png>]
+
+
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+[10
+pdfTeX warning (ext4): destination with the same identifier (name{figure.4}) has been already used, duplicate ignored
+<argument> ...shipout:D \box_use:N \l_shipout_box 
+                                                  \__shipout_drop_firstpage_...
+l.449 \newpage
+              
+pdfTeX warning (ext4): destination with the same identifier (name{figure.5}) has been already used, duplicate ignored
+<argument> ...shipout:D \box_use:N \l_shipout_box 
+                                                  \__shipout_drop_firstpage_...
+l.449 \newpage
+               <../../6. plot_Lasso_MAE.png> <../../6. plot_Lasso_R2.png>]
+<../../6. plot_Ridge_RMSE.png, id=147, 578.16pt x 433.62pt>
+File: ../../6. plot_Ridge_RMSE.png Graphic file (type png)
+<use ../../6. plot_Ridge_RMSE.png>
+Package pdftex.def Info: ../../6. plot_Ridge_RMSE.png  used on input line 453.
+(pdftex.def)             Requested size: 297.60114pt x 223.201pt.
+<../../6. plot_Ridge_MAE.png, id=148, 578.16pt x 433.62pt>
+File: ../../6. plot_Ridge_MAE.png Graphic file (type png)
+<use ../../6. plot_Ridge_MAE.png>
+Package pdftex.def Info: ../../6. plot_Ridge_MAE.png  used on input line 461.
+(pdftex.def)             Requested size: 297.60114pt x 223.201pt.
+<../../6. plot_Ridge_R2.png, id=149, 578.16pt x 433.62pt>
+File: ../../6. plot_Ridge_R2.png Graphic file (type png)
+<use ../../6. plot_Ridge_R2.png>
+Package pdftex.def Info: ../../6. plot_Ridge_R2.png  used on input line 469.
+(pdftex.def)             Requested size: 297.60114pt x 223.201pt.
+
+
+
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+[11
+pdfTeX warning (ext4): destination with the same identifier (name{figure.6}) has been already used, duplicate ignored
+<argument> ...shipout:D \box_use:N \l_shipout_box 
+                                                  \__shipout_drop_firstpage_...
+l.475 
+      
+pdfTeX warning (ext4): destination with the same identifier (name{figure.7}) has been already used, duplicate ignored
+<argument> ...shipout:D \box_use:N \l_shipout_box 
+                                                  \__shipout_drop_firstpage_...
+l.475 
+       <../../6. plot_Ridge_RMSE.png> <../../6. plot_Ridge_MAE.png>]
+
+
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+[12
+pdfTeX warning (ext4): destination with the same identifier (name{figure.8}) has been already used, duplicate ignored
+<argument> ...shipout:D \box_use:N \l_shipout_box 
+                                                  \__shipout_drop_firstpage_...
+l.476 \newpage
+               <../../6. plot_Ridge_R2.png>]
+<../../6. plot_Random Forest_RMSE.png, id=162, 578.16pt x 433.62pt>
+File: ../../6. plot_Random Forest_RMSE.png Graphic file (type png)
+<use ../../6. plot_Random Forest_RMSE.png>
+Package pdftex.def Info: ../../6. plot_Random Forest_RMSE.png  used on input line 480.
+(pdftex.def)             Requested size: 297.60114pt x 223.201pt.
+<../../6. plot_Random Forest_MAE.png, id=163, 578.16pt x 433.62pt>
+File: ../../6. plot_Random Forest_MAE.png Graphic file (type png)
+<use ../../6. plot_Random Forest_MAE.png>
+Package pdftex.def Info: ../../6. plot_Random Forest_MAE.png  used on input line 488.
+(pdftex.def)             Requested size: 297.60114pt x 223.201pt.
+<../../6. plot_Random Forest_R2.png, id=164, 578.16pt x 433.62pt>
+File: ../../6. plot_Random Forest_R2.png Graphic file (type png)
+<use ../../6. plot_Random Forest_R2.png>
+Package pdftex.def Info: ../../6. plot_Random Forest_R2.png  used on input line 496.
+(pdftex.def)             Requested size: 297.60114pt x 223.201pt.
+
+
+
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+[13
+pdfTeX warning (ext4): destination with the same identifier (name{figure.9}) has been already used, duplicate ignored
+<argument> ...shipout:D \box_use:N \l_shipout_box 
+                                                  \__shipout_drop_firstpage_...
+l.502 
+      
+pdfTeX warning (ext4): destination with the same identifier (name{figure.10}) has been already used, duplicate ignored
+<argument> ...shipout:D \box_use:N \l_shipout_box 
+                                                  \__shipout_drop_firstpage_...
+l.502 
+       <../../6. plot_Random Forest_RMSE.png> <../../6. plot_Random Forest_MAE.png>]
+
+
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+[14
+pdfTeX warning (ext4): destination with the same identifier (name{figure.11}) has been already used, duplicate ignored
+<argument> ...shipout:D \box_use:N \l_shipout_box 
+                                                  \__shipout_drop_firstpage_...
+l.503 \newpage
+               <../../6. plot_Random Forest_R2.png>]
+<../../6. plot_XGBoost_RMSE.png, id=177, 578.16pt x 433.62pt>
+File: ../../6. plot_XGBoost_RMSE.png Graphic file (type png)
+<use ../../6. plot_XGBoost_RMSE.png>
+Package pdftex.def Info: ../../6. plot_XGBoost_RMSE.png  used on input line 507.
+(pdftex.def)             Requested size: 297.60114pt x 223.201pt.
+<../../6. plot_XGBoost_MAE.png, id=178, 578.16pt x 433.62pt>
+File: ../../6. plot_XGBoost_MAE.png Graphic file (type png)
+<use ../../6. plot_XGBoost_MAE.png>
+Package pdftex.def Info: ../../6. plot_XGBoost_MAE.png  used on input line 515.
+(pdftex.def)             Requested size: 297.60114pt x 223.201pt.
+<../../6. plot_XGBoost_R2.png, id=179, 578.16pt x 433.62pt>
+File: ../../6. plot_XGBoost_R2.png Graphic file (type png)
+<use ../../6. plot_XGBoost_R2.png>
+Package pdftex.def Info: ../../6. plot_XGBoost_R2.png  used on input line 523.
+(pdftex.def)             Requested size: 297.60114pt x 223.201pt.
+
+
+
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+[15
+pdfTeX warning (ext4): destination with the same identifier (name{figure.12}) has been already used, duplicate ignored
+<argument> ...shipout:D \box_use:N \l_shipout_box 
+                                                  \__shipout_drop_firstpage_...
+l.529 
+      
+pdfTeX warning (ext4): destination with the same identifier (name{figure.13}) has been already used, duplicate ignored
+<argument> ...shipout:D \box_use:N \l_shipout_box 
+                                                  \__shipout_drop_firstpage_...
+l.529 
+       <../../6. plot_XGBoost_RMSE.png> <../../6. plot_XGBoost_MAE.png>]
+
+
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+[16
+pdfTeX warning (ext4): destination with the same identifier (name{figure.14}) has been already used, duplicate ignored
+<argument> ...shipout:D \box_use:N \l_shipout_box 
+                                                  \__shipout_drop_firstpage_...
+l.530 \newpage
+               <../../6. plot_XGBoost_R2.png>]
+<../../6. plot_Cubist_RMSE.png, id=191, 578.16pt x 433.62pt>
+File: ../../6. plot_Cubist_RMSE.png Graphic file (type png)
+<use ../../6. plot_Cubist_RMSE.png>
+Package pdftex.def Info: ../../6. plot_Cubist_RMSE.png  used on input line 534.
+(pdftex.def)             Requested size: 297.60114pt x 223.201pt.
+<../../6. plot_Cubist_MAE.png, id=192, 578.16pt x 433.62pt>
+File: ../../6. plot_Cubist_MAE.png Graphic file (type png)
+<use ../../6. plot_Cubist_MAE.png>
+Package pdftex.def Info: ../../6. plot_Cubist_MAE.png  used on input line 542.
+(pdftex.def)             Requested size: 297.60114pt x 223.201pt.
+<../../6. plot_Cubist_R2.png, id=193, 578.16pt x 433.62pt>
+File: ../../6. plot_Cubist_R2.png Graphic file (type png)
+<use ../../6. plot_Cubist_R2.png>
+Package pdftex.def Info: ../../6. plot_Cubist_R2.png  used on input line 550.
+(pdftex.def)             Requested size: 297.60114pt x 223.201pt.
+
+
+
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+[17
+pdfTeX warning (ext4): destination with the same identifier (name{figure.15}) has been already used, duplicate ignored
+<argument> ...shipout:D \box_use:N \l_shipout_box 
+                                                  \__shipout_drop_firstpage_...
+l.556 
+      
+pdfTeX warning (ext4): destination with the same identifier (name{figure.16}) has been already used, duplicate ignored
+<argument> ...shipout:D \box_use:N \l_shipout_box 
+                                                  \__shipout_drop_firstpage_...
+l.556 
+       <../../6. plot_Cubist_RMSE.png> <../../6. plot_Cubist_MAE.png>]
+
+
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+[18
+pdfTeX warning (ext4): destination with the same identifier (name{figure.17}) has been already used, duplicate ignored
+<argument> ...shipout:D \box_use:N \l_shipout_box 
+                                                  \__shipout_drop_firstpage_...
+l.557 \newpage
+               <../../6. plot_Cubist_R2.png>]
+No file Data-augmentation.bbl.
+
+
+
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+[19] (./Data-augmentation.aux)
+ ***********
+LaTeX2e <2025-06-01> patch level 1
+L3 programming layer <2025-09-02>
+ ***********
+
+LaTeX Font Warning: Size substitutions with differences
+(Font)              up to 0.985pt have occurred.
+
+Package rerunfilecheck Info: File `Data-augmentation.out' has not changed.
+(rerunfilecheck)             Checksum: 192C4302B6EEB63787D5CAD41D988511;1899.
+ ) 
+Here is how much of TeX's memory you used:
+ 15706 strings out of 469778
+ 246524 string characters out of 5479961
+ 688826 words of memory out of 5000000
+ 43772 multiletter control sequences out of 15000+600000
+ 643249 words of font info for 109 fonts, out of 8000000 for 9000
+ 24 hyphenation exceptions out of 8191
+ 90i,12n,93p,554b,621s stack positions out of 10000i,1000n,20000p,200000b,200000s
+<c:/Users/aekjung/AppData/Roaming/TinyTeX/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx12.pfb><c:/Users/aekjung/AppData/Roaming/TinyTeX/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx8.pfb><c:/Users/aekjung/AppData/Roaming/TinyTeX/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx9.pfb><c:/Users/aekjung/AppData/Roaming/TinyTeX/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb><c:/Users/aekjung/AppData/Roaming/TinyTeX/texmf-dist/fonts/type1/public/amsfonts/cm/cmr12.pfb><c:/Users/aekjung/AppData/Roaming/TinyTeX/texmf-dist/fonts/type1/public/amsfonts/cm/cmr17.pfb><c:/Users/aekjung/AppData/Roaming/TinyTeX/texmf-dist/fonts/type1/public/amsfonts/cm/cmr8.pfb><c:/Users/aekjung/AppData/Roaming/TinyTeX/texmf-dist/fonts/type1/public/amsfonts/cm/cmr9.pfb><c:/Users/aekjung/AppData/Roaming/TinyTeX/texmf-dist/fonts/type1/public/amsfonts/cm/cmtt10.pfb>
+Output written on Data-augmentation.pdf (19 pages, 3240909 bytes).
+PDF statistics:
+ 265 PDF objects out of 1000 (max. 8388607)
+ 202 compressed objects within 3 object streams
+ 56 named destinations out of 1000 (max. 500000)
+ 224 words of extra memory for PDF output out of 10000 (max. 10000000)
+

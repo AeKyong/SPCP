@@ -1,0 +1,217 @@
+---
+title: "Machine Learning for Imbalanced Data"
+format: revealjs
+editor: visual
+author: Ae Kyong Jung 
+theme: default
+date: "`r format(Sys.Date())`"
+---
+
+```{r 0}
+knitr::opts_chunk$set(echo = FALSE, message = FALSE, warning = FALSE, error = FALSE)
+```
+
+## 1. Prepare Data
+
+::: {style="font-size: 70%;"}
+-   Random split
+    -   Train: 70% random sampling
+    -   Test: The remaining 30% of the data
+-   25G split
+    -   Train: 22G, 23G, 24G, A01, A02, A03, B01, B02
+    -   Test: 25G
+-   Dependent variable
+    -   PCT_CTT
+    -   PCT_IRT
+    -   PCT_SEM: not apply balancing method
+:::
+
+```{r 1, echo = FALSE, message = FALSE, warning = FALSE, error = FALSE}
+
+rm(list=ls())
+devtools::load_all()
+library(reshape)
+library(automap) # tar.gz
+library(devtools)
+library(UBL)
+library(e1071)
+library(randomForest)
+library(caret)
+
+
+# load data
+itemData = readxl::read_excel("../data/math_g3_feature.xlsx", skip =1, col_names =TRUE, sheet = "Coding")
+
+# save original variable names
+originalVarName = names(itemData)
+
+# rename the variables
+varNames.info = c("grade","testType", "itemNum", "itemID","standard",
+             "pctCTT","b.bf","a.bf","pctIRT","b.af","a.af", "pctSEM")
+varNames.predictors = c(paste0("v", 1:(ncol(itemData)-length(varNames.info))))
+
+colnames(itemData) = c(varNames.info, varNames.predictors)
+
+
+# select data of predictor variables
+predictors = itemData[,varNames.predictors]
+
+# remove all 1 or 0 variable
+predictors = predictors[,which(apply(predictors, 2, sum)!= nrow(predictors))]
+predictors = predictors[,which(apply(predictors, 2, sum)!= 0)]
+
+# combine information  and predictor data
+itemDataF = as.data.frame(cbind(itemData[,varNames.info], predictors))
+
+# save final predictor variable names
+predictor_vars = names(predictors)
+
+
+#----------------------------------------
+# 1. Prepare Data
+#----------------------------------------
+target_variables = c("pctCTT", "pctIRT", "pctSEM")
+all_datasets = list()
+target = "pctCTT"
+for (target in target_variables) {
+  all_datasets[[target]] = prepare_ml_datasets(
+    full_data = itemDataF,
+    target_variable = target,
+    predictor_vars = predictor_vars
+  )
+}
+
+```
+
+## 2. Balancing Methods
+
+::: {style="font-size: 60%;"}
+-   **Random Over Sampling**
+    -   Randomly duplicates samples from the minority class to balance the dataset. Simple and fast but risks overfitting due to exact copies.\
+-   **Gaussian Noise**
+    -   Adds random Gaussian noise to minority class samples to create synthetic data. Increases diversity but may introduce unrealistic variations.\
+-   **Smote Regress**
+    -   Generates synthetic samples by interpolating between minority class instances and their neighbors. Effective for regression, preserving data relationships, but sensitive to noisy data.\
+-   **Smote + Gaussian Noise**
+    -   Combines SMOTE’s synthetic interpolation with Gaussian noise for added variability. Balances data while reducing overfitting risks but increases complexity.
+-   **Importance Sampling**
+    -   Assigns weights to samples based on their importance, focusing on underrepresented regions. Adapts to data but requires careful tuning.
+-   **Multiple Imputation**
+    -  *miceadds::syn_da()*
+
+-   **Catalytic Prior**
+:::
+
+## 2. Balancing Methods
+
+::: {style="font-size: 60%;"}
+Relevance of cases is evaluated based on Utility-based regression. So the relevance function might be utility-based regression which is automatic method in `UBL`.
+:::
+
+## 2. Balancing Method Specs
+
+::: {style="font-size: 70%;"}
+-   R package *UBL*
+-   Relevance function: Normal vs. Rare (or Important)
+    -   range: 0 to 1 (1: maximum relevance, 0: minimum relevance)
+    -   `rel` = auto (assignment of higher relevance to the scarcely represented cases)
+-   Relevance threshold
+    -   A case is considered as belonging to the rare.
+    -   `thr.rel` = 0.8
+-   Bump of relevance
+    -   The percentage of over-sampling to apply to each case obtained with the threshold.
+    -   `C.perc` = balance (balancing normal and rare cases)
+:::
+
+## 2. Balancing Method in R
+
+```{r 2, echo=TRUE}
+balance_data = function(all_balanced, target_variable){
+
+  target_balanced = list()
+
+  balancingMethods = c(
+    RandOverRegress,
+    GaussNoiseRegress,
+    SmoteRegress,
+    SMOGNRegress,
+    WERCSRegress  
+  )
+
+  thr.rel = 0.8
+  C.perc = "balance"
+
+  # split random and 25g
+  for (split in c("random", "25g")){
+    # select split data
+    train_split = all_balanced[[target_variable]][[paste0("train_", split, "_NA")]]
+    train_split_bm = as.data.frame(train_split[,!names(train_split) %in% c("itemID")])
+
+    # apply balancing method to train data
+    tryCatch({
+      for(balancingMethod in balancingMethods){
+        if(identical(balancingMethod, RandOverRegress)) {
+          bm = "RO"
+          trainBalanced = balancingMethod(pct~., train_split_bm, thr.rel=thr.rel, C.perc=C.perc)
+        }
+        else if(identical(balancingMethod, GaussNoiseRegress)) {
+          bm = "GN"
+          trainBalanced = balancingMethod(pct~., train_split_bm, thr.rel=thr.rel, C.perc=C.perc)
+        }
+        else if(identical(balancingMethod, SmoteRegress)) {
+          bm = "SR"
+          trainBalanced = balancingMethod(pct~., train_split_bm, thr.rel=thr.rel, C.perc=C.perc)
+        }
+        else if(identical(balancingMethod, SMOGNRegress)) {
+          bm = "SG"
+          trainBalanced = balancingMethod(pct~., train_split_bm, thr.rel=thr.rel, C.perc=C.perc)
+        }
+        else if(identical(balancingMethod, WERCSRegress)) {
+          bm = "IS"
+          trainBalanced = balancingMethod(pct~., train_split_bm, thr.rel=thr.rel, C.perc=C.perc)
+        }
+        all_balanced[[target_variable]][[paste0("train_", split, "_", bm)]] <<- trainBalanced
+      }
+
+  }, error = function(e){
+    message("Error in the balancing for split ",target_variable, "/", split, "/",bm, ":", e$message)
+    return(NULL)
+  })
+  }
+  return(all_balanced)
+}
+
+
+#--------------------------------------------
+# 2. Balancing Data
+#--------------------------------------------
+all_balanced = all_datasets
+
+target_variables = c("pctCTT", "pctIRT")
+for(target in target_variables){
+  balance_data(all_balanced = all_balanced,
+                target_variable = target)
+  }
+
+
+print(names(all_balanced[["pctCTT"]]))
+```
+
+## 3. Train and Evaluate
+
+::: {style="font-size: 70%;"}
+-   Model
+    -   Ridge
+    -   Lasso
+    -   SVR
+    -   Random Forest
+    -   XGBoost
+    -   Cubist
+:::
+
+## 4. Meeting 07/25/2025
+
+1.  Data Types: Very skewed, skewed, not skewed
+2.  What is the definition of range for the continuous target variable
+3.  What distribution does the balancing method assume for the target variable?
+4.  After balancing, target variable value become normal? how does it look like?

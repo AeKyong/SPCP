@@ -20,8 +20,8 @@ conditionInformation = function(arrayNumber, nReplicationsPerCondition) {
       "SmoteRegress", # 1. change the value between (0,1) -> 0 or 1, 2. Treat them as a probability
       "SMOGNRegress", # same as above
       "WERCSRegress",#importance sampling
-      "augMI",  # statistically strong
-      "augCAT" # amplifying when sample size is small.
+      "augCAT"
+      # "augMI",  # statistically strong
       # "augNN" # similar with Virtual Sample Generation(VSG). sample size is small, so R2 is too small. augMI or augCAT might be better .
       ),
     cvType = c(
@@ -60,20 +60,9 @@ conditionInformation = function(arrayNumber, nReplicationsPerCondition) {
   cvType = conditions$cvType[conditionsMatrix[conditionNumber,4]]
   modelMethod =  conditions$modelMethod[conditionsMatrix[conditionNumber,5]]
 
-
   return(list(
     nConditions = nConditions, conditionsMatrix = conditionsMatrix,
     target = target, testSplit = testSplit, augMethod = augMethod, cvType = cvType, modelMethod = modelMethod)
     )
 
 }
-
-# 12/31/2025
-# 1. This can be removed.
-# # remove all 1 or 0 variable
-# predictors = predictors[,which(apply(predictors, 2, sum)!= nrow(predictors))] # remove v1, v23
-# predictors = predictors[,which(apply(predictors, 2, sum)!= 0)]
-
-# Discussion
-# 1/2
-# If rare case is increased, overfitting is occurred.

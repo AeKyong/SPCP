@@ -1,48 +1,60 @@
-data_augmentation = function(data, augMethod, nSyn){
-
-
-  # specs for synthetic data
-  thr.rel = 0.1
-  under = 1.0
-  over = 2.0
-  C.perc = "balance"
-  pert = 0.1  # noise = sd*0.1
+data_augmentation = function(data, augMethod, nMultiple, nTarget){
+# browser()
 
   # select split data
   train = data[["train"]]
   train_filtered = as.data.frame(train[,!names(train) %in% c("itemID")])
 
+  # specs for synthetic data
+  thr.rel = 0.9
+  C.perc = list(nMultiple, 1.0) # x3 and x1
+  pert = 0.1  # noise = sd*0.1
+
+  # augmentation specs for UBL functions
+  summaryY = summary(train_filtered$pct)
+  thresholdY = summaryY["1st Qu."]
+
+  control_matrix = matrix(c(
+    summaryY["Min."],     1,
+    thresholdY,         1,
+    thresholdY + 0.001, 0,
+    summaryY["Max."],     0
+  ), ncol = 2, byrow = TRUE)
+
+  # control_matrix <- matrix(
+  #   c(summaryY["1st Qu."], 1,
+  #     summaryY["Median"],  0,
+  #     summaryY["3rd Qu."], 1),
+  #   ncol = 2, byrow = TRUE)
+
+  # specs for relevance function (phi)
+  rel = UBL::phi.control(train_filtered$pct,
+                          method = "range",  # linear interpolation between two points
+                          control.pts = control_matrix # provide key points
+                          # extr.type = "low"
+                         )
 
   if(augMethod == "None") {
     trainBalanced = train_filtered
 
   } else if(augMethod == "RandOverRegress") {
-    trainBalanced = RandOverRegress(pct~., train_filtered, thr.rel = thr.rel, C.perc=C.perc)
+    trainBalanced = RandOverRegress(pct~., train_filtered, thr.rel = thr.rel, C.perc=list(nMultiple), rel = rel)
 
   } else if(augMethod == "GaussNoiseRegress") {
-    trainBalanced = GaussNoiseRegress(pct ~ ., train_filtered,  thr.rel = thr.rel, C.perc = C.perc)
+    trainBalanced = GaussNoiseRegress(pct ~ ., train_filtered,  thr.rel = thr.rel, C.perc = C.perc, rel = rel)
 
   } else if(augMethod == "SmoteRegress") {
-    trainBalanced = SmoteRegress(pct ~ ., train_filtered, thr.rel = thr.rel, C.perc = C.perc)
+    trainBalanced = SmoteRegress(pct ~ ., train_filtered, thr.rel = thr.rel, C.perc = C.perc, rel = rel)
 
   } else if(augMethod == "SMOGNRegress") {
-    trainBalanced = SMOGNRegress(pct~., train_filtered, thr.rel=thr.rel, C.perc=C.perc)
+    trainBalanced = SMOGNRegress(pct~., train_filtered, thr.rel=thr.rel, C.perc=C.perc, rel = rel)
 
   } else if(augMethod == "WERCSRegress") {
-    trainBalanced = WERCSRegress(pct~., train_filtered, thr.rel=thr.rel, C.perc=C.perc)
-
-  } else if(augMethod == "augMI") {
-    items = names(train_filtered)[grep("v", names(train_filtered))]
-    trainBalanced = augMI(dat = train_filtered, fix_vars=c(), ord_vars=c(items), syn_vars=c("pct", items)) # synthetic pct values are the same with the original
+    trainBalanced = WERCSRegress(pct~., train_filtered, thr.rel=thr.rel, C.perc=C.perc, rel = rel)
 
   } else if(augMethod == "augCAT") {
     items = names(train_filtered)[grep("v", names(train_filtered))]
-    trainBalanced = augCAT(dat = train_filtered, target = "pct", predictors = items, nSyn = nSyn)
-
-  } else if(augMethod == "augNN") {
-    items = names(train_filtered)[grep("v", names(train_filtered))]
-    trainBalanced = augNN(dat = train_filtered, target = "pct", predictors = items, nSyn = nSyn)
-
+    trainBalanced = augCAT(dat = train_filtered, target = "pct", predictors = items, nSyn =  (nMultiple*nTarget), threshold = thresholdY)
   }
 
 
@@ -51,11 +63,18 @@ data_augmentation = function(data, augMethod, nSyn){
     # ###########################
     # # augmentation specs for UBL functions
     # summaryY = summary(train_filtered$pct)
+    # # control_matrix <- matrix(
+    # #   c(summaryY["1st Qu."], 1,
+    # #     summaryY["Median"],  0,
+    # #     summaryY["3rd Qu."], 0.5),
+    # #   ncol = 2, byrow = TRUE)
+    #
     # control_matrix <- matrix(
-    #   c(summaryY["1st Qu."], 1,
-    #     summaryY["Median"],  0,
-    #     summaryY["3rd Qu."], 1),
+    #   c(summaryY["Min."],      1,   # 가장 낮은 값에 중요도 1
+    #     summaryY["1st Qu."],   1,   # 1사분위수까지 중요도 1 유지
+    #     summaryY["Median"],    0),  # 중앙값부터는 중요도 0 (생성 대상 제외)
     #   ncol = 2, byrow = TRUE)
+    #
     #
     # # specs for relevance function (phi)
     # rel <- UBL::phi.control(train_filtered$pct,
@@ -64,7 +83,7 @@ data_augmentation = function(data, augMethod, nSyn){
     #                         # extr.type = "low"
     # )
     # # 1. Create a sequence of target values spanning your data's range
-    # # We will calculate the relevance for each of these points.
+    # We will calculate the relevance for each of these points.
     # x_values <- seq(from = summaryY["Min."], to = summaryY["Max."], by = 0.1)
     #
     # # 2. Calculate the relevance score for each x_value using your 'rel' object
@@ -102,6 +121,7 @@ data_augmentation = function(data, augMethod, nSyn){
     #
     # ggsave(plot = relevancePlot, paste0("Plot_", target_variable, "_", split, ".png"), width = 16, height = 10, dpi = 300)
 
-  return(trainBalanced)
+
+   return(trainBalanced)
 
 }
